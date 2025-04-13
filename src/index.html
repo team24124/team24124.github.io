@@ -4,16 +4,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet", href="style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://use.typekit.net/dtb2yox.css">
+  <title>Team 24124 - Learn how to FTC!</title>
 </head>
 <body>
-  <h3>Lessons</h3>
-  <ul>
-    {% for slide in collections.slideshows %}
-      <li>
-        <a href="{{ slide.url }}">{{ slide.data.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+    <hero class="container" id="hero">
+      <div>
+        <div class="hero-title">
+          <h3>COME LEARN</h3>
+          <h1 id="typeable">ROBOTICS</h1>
+          <h3>WITH US</h33>
+        </div>
+  
+        <span class="hero-buttons">
+          <a href="#lessons" class="button">LESSONS →</a>
+          <a href="#exercises" class="button">EXERCISES →</a>
+          <a href="#questions" class="button">QUESTIONS →</a>
+        </span>
+  
+        <div class="hero-icon">
+          <img src="./images/nthsbird.png" width="75px" height="75px">
+        </div>
+      </div>
+    </hero>
+  
+    <section class="container" id="main">
+      <header>
+        <h1>Nighthawks Robotics Educational Content</h1>
+      </header>
+
+      <div class="segment">
+        <h1 id="purpose">Motivation</h1>
+        <p>
+          Nighthawks Robotics is dedicated to furthering our STEM and robotics knowledge within and beyond our teams! In the spirit of the FIRST core value of <i>Gracious Professionalism</i> and motivated by providing educational content to anyone interested in high school level robotics or the FIRST Tech Challenge, we use this website as a centralized hub for pedagogical and instructive content.
+        </p>
+        <p>
+          Any and all content shared on this page is available for use for anyone curious or interested in learning! Feel free to reach out to our team regarding any questions!  
+        </p>
+        <img src="./images/20250316 FIRST Tech Challenge Alberta Championship 742.jpg">
+        
+      </div>
+
+      <div class="segment">
+        <h1 id="lessons">Lessons</h1>
+        <p>
+          Find below a collection of slideshows and lessons covering topics from basics with the Java programming language to working with the FTC SDK, trajectory planning libraries and more.
+          Slideshows are presented using <i>reveal.js</i> and are written in plaintext markdown files available to download and share.
+        </p>
+        <ul>
+          {% for slide in collections.slideshows %}
+            <li>
+              <a href="{{ slide.url }}">{{ slide.data.title }}</a> <a href="downloads/{{ slide.inputPath | split: '/' | last  }}" download>(.md)</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="segment">
+        <h1 id="exercises">Exercises</h1>
+        <p>
+          Find below a collection of supplementary exercises to help you learn the basics of programming and robotics.
+        </p>
+        <ul>
+          {% for exercise in collections.exercises %}
+            <li>
+              <a href="{{ exercise.url }}">{{ exercise.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="segment">
+        <h1 id="questions">Questions</h1>
+        <p>This part of the website is currently under construction! Check back later for more! </p>
+      </div>
+      
+      <footer>
+        <div class="footer-items">
+          <div class="item group">
+            <span class="footer-item">
+              <p class="footer-item-title"><b>Our Teams</b></p>
+              <div class="footer-item-content">
+                <a href="https://ftc-events.firstinspires.org/team/24124"><p>24124</p></a>
+                <a href="https://ftc-events.firstinspires.org/team/26145"><p>26145</p></a>
+                <a href=""><p>00000</p></a>
+              </div>
+            </span>
+    
+            <span class="footer-item">
+              <p><b>About</b></p>
+              <div class="footer-item-content">
+                <a href="https://www.firstinspires.org/robotics/ftc"><p>FIRST Robotics</p></a>
+                <a href=""><p>Our Team</p></a>
+              </div>
+            </span>
+    
+            <span class="footer-item">
+              <p><b>Sponsor Us</b></p>
+              <a href="https://www.educationmatters.ca/project-matters/north-trail-high-school-nighthawks-robotics-steam-team-fundraising-campaign/"><p>Education Matters</p></a>
+              <a href=""><p>Contact</p></a>
+            </span>  
+          </div>
+          <img class="footer-logo" src="./images/roboticslogo-icon.png" width="160px">
+        </div>
+        <p class="footer-disclaimer">No official affiliation with <b>North Trail High School</b> or <b>FIRST Robotics.</b></p>
+      </footer>
+    </section>
+
+
+    <script src="./typewriter.js"></script>
 </body>
 </html>
