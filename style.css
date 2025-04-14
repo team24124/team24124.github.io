@@ -185,7 +185,7 @@ body{
     .container {
         display: grid;
         justify-self: center;
-        min-width: 60vw;
+        min-width: 100vw;
     }   
     
 }
