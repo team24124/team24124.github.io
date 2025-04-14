@@ -187,5 +187,9 @@ body{
         justify-self: center;
         min-width: 100vw;
     }   
+
+    .segment{
+        margin: 0 4vw;
+    }
     
 }
