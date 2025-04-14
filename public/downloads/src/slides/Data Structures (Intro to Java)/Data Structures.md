@@ -1,0 +1,350 @@
+---
+title: Data Structures
+---
+
+# Data Structures
+
+---
+
+You may have noticed that for groups of related data you don't really have a way of organizing them in a neat, useful way. Right now you're kind of just juggling variables, giving them redundant names like `name4` or `result3`. In cases like this where a bunch of data would benefit from being organized together, you will be using *data structures.*
+
+---
+## What is a data structure?
+
+Well, as the name suggests, it's a way to structure related data together in a neat, sensible way.
+
+- Data structures come in various different forms, all of which have their own uses as well as drawbacks. <!-- .element: class="fragment" data-fragment-index="1" -->
+- In *Java*, the main ones you wanna know are **Arrays, Lists, and HashMaps.** <!-- .element: class="fragment" data-fragment-index="2" -->
+
+I'm just gonna teach you the basics; **Arrays, ArrayLists, and LinkedLists.** This is mainly because I don't want to overwhelm you with information, and because I want this to be a crash course in *data structures,* not *data structures you can use in Java.* <!-- .element: class="fragment" data-fragment-index="3" -->
+
+All good? **Lets get started!** <!-- .element: class="fragment" data-fragment-index="4" -->
+
+---
+## Arrays
+
+These are like the vanilla ice cream of data structures. They are about as simple as it gets when it comes to representing data structures in any given programming language, hence why I'm teaching these first.
+
+### What are the specifics of arrays? <!-- .element: class="fragment" data-fragment-index = "1" -->
+
+An array is really just an arbitrary number of values put together into one. 
+
+- Each value has an index. <!-- .element: class="fragment" data-fragment-index="2" -->
+- Each value must be of the same type <!-- .element: class="fragment" data-fragment-index="3" -->
+- The amount of values cannot change from declaration <!-- .element: class="fragment" data-fragment-index="4" -->
+
+---
+
+### What does an array look like?
+
+You can visualize an array kind of like this:
+
+![Array visual representation](./array-visual-representation.png)
+*Note how the numbers count up from zero, this is how data structures index.* **They always start from zero.**
+
+## Let's take a look at how one looks in code <!-- .element: class="fragment" data-fragment-index="1" -->
+---
+You can declare an array in Java like this:
+
+```java [1-3|5-6]
+// First method: Initialize with value
+datatype[] name = {firstElement, secondElement, thirdElement, etc};
+
+// Second method: Initialize with length
+datatype[] name = new datatype[length];
+```
+*Note: The "length" of an array refers to how many indexes it has*
+
+And here's an example of what an array looks like in action:
+
+``` java
+public class Main{
+	public static void main(String[] args){
+		int[] awesomeNumbers = {5, 10, 15, 109248};
+
+		// Prints out 109248
+		System.out.println(awesomeNumbers[3]);
+	}
+}
+```
+
+When run, all this program does is print out "109248," but we didn't just pull that number out of thin air. We got that number by accessing the fourth index (which would be 3) of the awesomeNumbers array.
+Which this itself is kind of a useless use case, it is already clear how powerful arrays can be.
+
+---
+## Looping through arrays
+
+You have already been taught how to use both while and for loops in Java, but it requires some different thinking when it comes to arrays.
+
+Let's say I want to access each element of an array and modify them in some way. How would I go about doing this? <!-- .element: class="fragment" data-fragment-index="1" -->
+Well, I would need to make a loop which let my apply the changes I needed to *for* every index. <!-- .element: class="fragment" data-fragment-index="2" -->
+
+So, we're gonna need to use for loops to access data in an array. It's very straightforward, have a look:
+``` java
+// other stuff
+
+int[] awesomeNumbers = {5, 10, 15, 109248};
+
+// Increment and print each number in awesomeNumbers
+for (int i = 0; i < awesomeNumbers.length; ++i){
+	awesomeNumbers[i]++;
+	System.out.println(awesomeNumbers[i]);
+}
+
+// other stuff
+```
+
+See, what we're doing is using the number kept track of in the for loop to keep track of our array. *Note how it ends before the length of the array. This because the last element will always be called the length - 1, all because we start counting from 0 instead of 1.* <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+You can also use what's called a **for each** loop. It's basically just a short hand loop designed for arrays.
+
+Here's what it looks like:
+``` java
+// other stuff
+
+int[] awesomeNumbers = {5, 10, 15, 109248};
+
+// Print each number in awesomeNumbers
+for (int i : awesomeNumbers){
+	System.out.println(i);
+}
+
+// other stuff
+```
+
+`int i` would be the *value* of the current index we are looking at. *Note that whatever i is can't be changed in a for each loop. For each loops are for accessing elements in an array and nothing else.*
+
+---
+### That's about it for arrays, but we need to take a quick detour
+
+Have you noticed something which I've been avoiding doing? <!-- .element: class= "fragment" data-fragment-index="1" -->
+
+This:
+```java
+// Other stuff
+
+int[] notAwesomeNumbers = {69, 420};
+System.out.println(notAwesomeNumbers);
+
+// Other stuff
+```
+Just printing out the array itself to the console. Theoretically, this shouldn't do anything weird... Right? <!-- .element: class="fragment" data-fragment-index="2" -->
+
+``` bash
+[I@5acf9800 
+```  
+<!-- .element: class="fragment" data-fragment-index="3" -->
+
+Oh dear. <!-- .element: class="fragment" data-fragment-index="4" -->
+
+---
+## Okay, what was that?
+*That* was the program doing *exactly* what I told it to do. And what did I tell it to do exactly? Well, I told it to print out a *memory address.*
+
+A memory address is just the location of data in computer memory.
+A common example is like a neighborhood: You have houses, which you could call the data, and you have the addresses for those houses, which is what people use to find the houses; the data.
+
+Okay great, but why did *that* program print out a **memory address** of all things? <!-- .element: class="fragment" data-fragment-index="1" -->
+Well, it has to do with two things: <!-- .element: class="fragment" data-fragment-index="2" -->
+1. That arrays aren't *primitive data types.* They are what is known as *objects.* You'll know what this means later when we talk about *Object Oriented Programming* <!-- .element: class="fragment" data-fragment-index="3" -->
+2. That the variable which we use to refer to an array is what is known as a *pointer.* If you've worked with lower level languages, you'll know what this means. In short, **it is a variable which points to a memory address.** <!-- .element: class="fragment" data-fragment-index="4" -->
+
+So, when we print out the variable which we use for the array, we're not printing the array, but we're printing a *pointer* of that array. Because Java has a memory management system known as a "garbage collector," you don't need to worry about memory management all that much. This is still important to know, though, because it will influence how you write your methods when they involve *objects.*
+
+---
+## Soo, what's the difference?
+The difference is in how the data gets passed around between variables. See, until now you've been working with primitive data types, and they always copy their value when you assign a variable equal to them.
+
+For example: <!-- .element: class="fragment" data-fragment-index="1" -->
+``` java
+// other stuff
+
+int a = 4;
+int b = a;
+
+b++;
+System.out.println(a)
+
+// other stuff
+```
+
+This will, predictably, print `4`. This is because when you assign b to a, you're actually assigning b to the *value* of a. This is what happens with primitive data types because it just makes sense intuitively. An integer does not take up that much memory, so it's okay to copy it.
+This because a problem at scale, though.
+
+---
+
+Let's say we have 1 000 000 elements in an array, and we need to assign another variable to that array for whatever reason. It would not be efficient to copy all of that memory, so what Java does instead is just use each variable as a pointer to the actual array. This way, multiple variables have access to the array, whilst only one copy of the array exists.
+
+This can get a little confusing, though. Especially when you write methods that take an array as a parameter. <!-- .element: class="fragment" data-fragment-index="1" -->
+
+Look at this:
+``` java
+public class Main{
+	public static void main(String[] args){
+		// First array
+		int[] arr = {1, 6, 2, 8};
+
+		// Second array
+		int[] arr1 = addOneToFirstEl(arr);
+
+		// Print out first element of first array
+		System.out.println(arr[0]);
+	}
+
+	// Takes the first element of an array and increments it
+	public static int[] addOneToFirstEl(int[] arrayParam){
+		arrayParam[0]++;
+		return arrayParam;
+	}
+}
+```
+Going by the logic of literally every other method you've written so far, this should print out `1`... Too bad this isn't like other methods you've written before.
+
+See, what's going on is the memory address stored in `arr` gets copied to the method, which means that `arrayParam` is actually pointing to the same data that `arr` is. This means that anything done to `arrayParam` will carry back to `arr`. All these changes will also apply to `arr1`, as all three are pointing to the same array in memory.
+
+---
+You can kind of think if the relationship like this:
+
+![Array Memory Visualization](./array-memory-visualization.png)
+They're all pointing to the same thing, they just get the memory address from each other.
+
+---
+## Okay, that's about it for arrays
+
+That's actually about it for data structures as well. Now that you understand how data structures actually work, learning all the other ones will be a lot easier.
+
+## So, let's get started with ArrayLists! <!-- .element: class="fragment" data-fragment-index="1" -->
+
+---
+## What is an ArrayList?
+
+An ArrayList is just like an array, except that 
+1. It can only store *objects*
+2. it is *dynamic* in size
+
+Now, only storing *objects* isn't exactly an issue, but it may cause some small hiccups. Keep in mind that there are *object* variants of every primitive type. All that you need to do is keep in mind how objects are stored in memory, as well as keeping your *return types* in check.
+
+The real deal-maker here is that these are *dynamic* in size. This means that the length of the arraylist can **change** whenever it needs to.
+
+## What's the catch? <!-- .element: class="fragment" data-fragment-index="1" -->
+
+The catch is, as it almost always is in computer science, *performance.* Arraylists are simply more costly than arrays. Sure, only by a little bit. That little bit adds up, though, and even the most basic operations in normal arrays take longer to do with arraylists.
+
+---
+## How to use ArrayLists
+
+It's fairly similar to arrays, but they are used a bit differently because they're not closely integrated into the language like normal arrays are.
+
+Here's how you make an array list:
+```java
+import java.util.ArrayList;
+// You can also import it using:
+// import java.util.*;
+// This just imports everything in java.util, which can add unnecessary bloat to your program
+
+// For the second way of making them, you need to import the Arrays class
+import java.util.Arrays
+
+public class Main{
+	public static void main(String[] args){
+		// ArrayList is created here
+		ArrayList<type> name = new ArrayList<type>();
+
+		// You can initialize the ArrayList with values like this:
+		ArrayList<type> name = new ArrayList<>(Arrays.asList(element1, element2, etc));
+		
+	}
+}
+```
+
+The first line imports the *ArrayList* class (You'll understand this better when we go over Object Oriented Programming). <!-- .element: class="fragment" data-fragment-index="1" -->
+
+The actual creation of the arraylist is *different* than creating an array, but it's pretty straightforward. Now, for initializing one with elements, you need to use a bit of a workaround in the Arrays class. This isn't necessary though. <!-- .element: class="fragment" data-fragment-index="2" -->
+
+---
+## Using an ArrayList
+
+Using an arraylist is very simple, but it's still *different* than arrays. To access the data in an arraylist, you need to use methods from the arraylist class. In other words, functions that arraylists have.
+
+You can add to an arraylist using the `add()` method:
+```java
+arrList.add(element); // Adds an element to the end of the arraylist
+// or
+arrList.add(index, element); // Lets you add an element at a certain index
+```
+
+You can remove from an arraylist using the `remove()` method:
+```java
+arrList.remove(index); // Removes an element at the given index
+```
+
+You can access elements using the `get()` method:
+```java
+arrList.get(index); // Returns the element at the index
+```
+
+You can change elements using the `set()` method:
+```java
+arrList.set(index, value); // Sets the element at the index to the value
+```
+
+You can get the length of an arraylist using the `size()` method:
+```java
+arrList.size(); // Returns the length of the arraylist
+```
+
+You can clear an arraylist using the `clear()` method:
+```java
+arrList.clear(); // Clears the arraylist
+```
+
+## Pretty simple, right? And that's about it for ArrayLists!
+
+---
+## LinkedLists are just ArrayLists but built different
+
+Literally. Now, what I mean by this is that, while they inherently have the same functions, they function in different ways.
+
+An **ArrayList** uses an array to store the data. To make it dynamic, it just deletes the old one and makes a new bigger one.
+
+A **LinkedList** stores elements in *containers* which point to each other. This means that, unlike arraylists, the elements aren't stored sequentially in memory. 
+
+---
+You can use one like this:
+```java
+import java.util.LinkedList;
+
+public class Main{
+	public static void main(String[] args){
+		 LinkedList<type> name = new LinkedList<type>();
+	}
+}
+```
+
+Other than just having to import a different class, it is identical.
+
+---
+## OK, great, now what's the point?
+
+The point is *performance.*
+
+*ArrayLists* and *LinkedLists* work in different ways that lend themselves better to different tasks.
+
+| ArrayLists                                                             | LinkedLists                                                                                 |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Manipulation takes more time because bits in memory need to be shifted | Manipulation takes less time because only references need to be changed in the *containers* |
+| Inefficient with memory                                                | Efficient with memory                                                                       |
+| Is better at storing and accessing data                                | Is better at manipulating data                                                              |
+
+---
+## Where to go from here?
+
+I would recommend looking into other data structures, especially **hashmaps.**
+
+Good resources for researching these are:
+- Websites like *W3Schools* and *GeeksForGeeks* which focus on digestible documentation <!-- .element: class="fragment" data-fragment-index="1" -->
+- Websites like *StackOverflow* which are forums that focus on programming. If you have a question about anything in programming, chances are you'll find it here. <!-- .element: class="fragment" data-fragment-index="2" -->
+- Official Java documentation. This is less recommended because it is a little hard to read if you don't know exactly what you're looking for. <!-- .element: class="fragment" data-fragment-index="3" -->
+
+## Good luck! <3
