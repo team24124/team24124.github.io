@@ -3,14 +3,16 @@ import Page from "../layouts/Page.astro"
 import TeamEPAGraph from "../components/TeamEPAGraph.astro"
 ---
 
-<Page>
+<Page title="Stats">
 	<div class="segment">
 		<h1>Statistics</h1>
+
+		<h2>The EPA Model</h2>
 		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam natus quidem? Ut sint, voluptates, pariatur delectus sequi velit assumenda architecto consectetur laborum nostrum nisi placeat distinctio doloremque reprehenderit est!
-			Vero fugit esse iste molestiae cumque, rerum ratione doloribus aspernatur corrupti sequi perspiciatis omnis harum. Adipisci cum similique autem, vero ratione, asperiores sapiente incidunt provident obcaecati, tempore eos. Amet, tenetur.
-			Velit, aliquam. In, id. Voluptatum labore ex, ipsa deserunt eligendi nemo reiciendis magni incidunt soluta recusandae saepe quae beatae, nam quo facilis. Aliquam modi, repellat possimus distinctio laborum fugit natus?
+			The Estimated Points Added (EPA) Model was originally developed by <a href="https://www.statbotics.io/blog/intro">Statbotics</a> for use in the FIRST Robotics Competition (FRC). 
+			Nighthawks Robotics has used this model to generate statistics for all FIRST Tech Challenmge (FTC) teams in the Alberta region and have provided the following data visualization to help teams view their historical EPA.
 		</p>
+		<p>Currently only teams inside the <b>Alberta</b> region are included in our data.</p>
 		<TeamEPAGraph />
 	</div>
 </Page>
