@@ -1,0 +1,25 @@
+---
+import "../styles/style.css"
+import NavDropdown from "./nav/NavDropdown.astro"
+import NavItem from "./nav/NavItem.astro"
+---
+
+<header>
+    <nav>
+        <ul>
+            <NavItem href="/">Home</NavItem>
+            <NavDropdown text="About">
+                <a href="#">The Team</a>
+                <a href="#">FIRST</a>
+                <a href="#">Our School</a>
+            </NavDropdown>
+            <NavDropdown text="Teams">
+                <a href="#">24124</a>
+                <a href="#">26145</a>
+            </NavDropdown>
+            <NavItem href="/learn">Programming</NavItem>
+            <NavItem href="/stats">Statistics</NavItem>
+            <NavItem href="/">Contact Us</NavItem>
+        </ul>
+    </nav>
+</header>

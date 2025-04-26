@@ -1,0 +1,10 @@
+---
+const { text } = Astro.props; 
+---
+
+<li class="dropdown">
+    { text }
+    <div class="dropdown-content">
+      <slot />
+    </div>
+</li>
