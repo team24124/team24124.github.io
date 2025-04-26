@@ -1,35 +1,16 @@
 ---
-import Footer from "../components/Footer.astro"
+import Page from "../layouts/Page.astro"
 import TeamEPAGraph from "../components/TeamEPAGraph.astro"
-import Header from "../components/Header.astro"
-import Banner from "../components/Banner.astro"
-
-import '../styles/style.css'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Nighthawks Robotics</title>
-	</head>
-	<body>
-		<Banner />
-		<section class="container" id="main">
-			<Header />
-			<div class="segment">
-				<h1>Statistics</h1>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam natus quidem? Ut sint, voluptates, pariatur delectus sequi velit assumenda architecto consectetur laborum nostrum nisi placeat distinctio doloremque reprehenderit est!
-					Vero fugit esse iste molestiae cumque, rerum ratione doloribus aspernatur corrupti sequi perspiciatis omnis harum. Adipisci cum similique autem, vero ratione, asperiores sapiente incidunt provident obcaecati, tempore eos. Amet, tenetur.
-					Velit, aliquam. In, id. Voluptatum labore ex, ipsa deserunt eligendi nemo reiciendis magni incidunt soluta recusandae saepe quae beatae, nam quo facilis. Aliquam modi, repellat possimus distinctio laborum fugit natus?
-				</p>
-				<TeamEPAGraph />
-			</div>
-			<Footer />
-		</section>
-		
-	</body>
-</html>
+<Page>
+	<div class="segment">
+		<h1>Statistics</h1>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aliquam natus quidem? Ut sint, voluptates, pariatur delectus sequi velit assumenda architecto consectetur laborum nostrum nisi placeat distinctio doloremque reprehenderit est!
+			Vero fugit esse iste molestiae cumque, rerum ratione doloribus aspernatur corrupti sequi perspiciatis omnis harum. Adipisci cum similique autem, vero ratione, asperiores sapiente incidunt provident obcaecati, tempore eos. Amet, tenetur.
+			Velit, aliquam. In, id. Voluptatum labore ex, ipsa deserunt eligendi nemo reiciendis magni incidunt soluta recusandae saepe quae beatae, nam quo facilis. Aliquam modi, repellat possimus distinctio laborum fugit natus?
+		</p>
+		<TeamEPAGraph />
+	</div>
+</Page>
