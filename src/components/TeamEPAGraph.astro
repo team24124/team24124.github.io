@@ -48,6 +48,12 @@ import '../styles/graph.css'
 			title += ` vs. ${team.team_number}`;
 		})
 	
+		console.log(title.length)
+		// Cutoff for ellipses
+		if(title.length >= 80){
+			title = title.substring(0, 80) + "..."
+		}
+
 		return title;
 	}
 
