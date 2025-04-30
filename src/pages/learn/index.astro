@@ -2,6 +2,7 @@
 import { fade } from "astro:transitions";
 import Page from "../../layouts/Page.astro"
 import fs from 'fs';
+import robotPhoto from "../../assets/20250316 FIRST Tech Challenge Alberta Championship 742.jpg"
 const slideFiles = fs.readdirSync('src/pages/learn/slides')
 const exerciseFiles = fs.readdirSync('public/content/exercises').filter(f => f.endsWith(".zip"));
 ---
@@ -16,7 +17,7 @@ const exerciseFiles = fs.readdirSync('public/content/exercises').filter(f => f.e
         <p>
           Any and all content shared on this page is available for use for anyone curious or interested in learning! Feel free to reach out to our team regarding any questions!  
         </p>
-        <img src="content/media/20250316 FIRST Tech Challenge Alberta Championship 742.jpg">
+        <img src={robotPhoto.src}>
         
       </div>
 
