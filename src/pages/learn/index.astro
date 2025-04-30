@@ -23,7 +23,7 @@ const exerciseFiles = fs.readdirSync('public/content/exercises').filter(f => f.e
       <div class="segment">
         <h2 id="lessons">Lessons</h2>
         <p>
-          Find below a collection of slideshows and lessons covering topics from basics with the Java programming language to working with the FTC SDK, trajectory planning libraries and more.
+          Find below a collection of slideshows (powered by Marp) and lessons covering topics from basics with the Java programming language to working with the FTC SDK, trajectory planning libraries and more.
         </p>
         <ul>
             {slideFiles.map(slide => <li><a href={`/learn/slides/${slide}`}>{slide}</a></li>)}
