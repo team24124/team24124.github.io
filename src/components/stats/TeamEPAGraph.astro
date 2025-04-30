@@ -1,5 +1,5 @@
 ---
-import TeamSelector from "./EPATypeSelector.astro";
+import TeamSelector from "./TeamSelector";
 import EPATypeSelector from "./EPATypeSelector.astro";
 import '../../styles/graph.css'
 ---
@@ -7,6 +7,7 @@ import '../../styles/graph.css'
 <div>
 	<div class="selectors">
 		<p>	Displaying Teams: </p>
+		<EPATypeSelector />
 		<TeamSelector client:load/>
 	</div>
     <div id="graph"></div>
