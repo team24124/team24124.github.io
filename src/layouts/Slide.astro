@@ -1,0 +1,18 @@
+---
+import Head from "../components/Head.astro"
+import '../styles/style.css'
+import "../styles/slideshow.css"
+---
+
+<html lang="en">
+    <Head title="Slideshow"/>
+    <body>
+        
+        <div id="content">
+            <div id="nav">
+                <a href="/learn">← Go Back</a>
+            </div>
+            <slot />
+        </div>
+	</body>
+</html>

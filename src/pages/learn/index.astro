@@ -3,9 +3,16 @@ import { fade } from "astro:transitions";
 import Page from "../../layouts/Page.astro"
 import fs from 'fs';
 import robotPhoto from "../../assets/media/20250316 FIRST Tech Challenge Alberta Championship 742.jpg"
+import mod from "astro/zod";
 
-const slideFiles = fs.readdirSync('src/pages/learn/slides')
-const pptxFiles = fs.readdirSync('public/content/slides').filter(f => f.endsWith(".pptx"));
+const marpSlides = fs.readdirSync('src/pages/learn/slides')
+const pptx = fs.readdirSync('public/content/slides').filter(f => f.endsWith(".pptx"));
+const slideshows = import.meta.glob('./slides/*.astro', { eager: true });
+const slides = Object.entries(slideshows).map(([path, object]) => ({
+  title: path.replace('./slides/', '').replace('.astro', ''),
+  path: path.replace('./slides', '/learn/slides').replace('.astro', '')
+}));
+
 const exerciseFiles = fs.readdirSync('public/content/exercises').filter(f => f.endsWith(".zip"));
 ---
 
@@ -29,8 +36,9 @@ const exerciseFiles = fs.readdirSync('public/content/exercises').filter(f => f.e
           Find below a collection of slideshows and lessons covering topics from basics with the Java programming language to working with the FTC SDK, trajectory planning libraries and more.
         </p>
         <ul>
-            {slideFiles.map(slide => <li><a href={`/learn/slides/${slide}`}>{slide}</a></li>)}
-            {pptxFiles.map(pptx => <li><a href={`/content/slides/${pptx}`} download>{`${pptx}`}</a></li>)}
+            {marpSlides.map(slide => <li><a href={`/learn/slides/${slide}`}>{slide}</a></li>)}
+            {pptx.map(pptx => <li><a href={`/content/slides/${pptx}`} download>{`${pptx}`}</a></li>)}
+            {slides.map(slides => <li><a href={slides.path}>{slides.title}</a></li>)}
         </ul>
       </div>
 
