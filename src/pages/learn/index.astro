@@ -5,7 +5,7 @@ import fs from 'fs';
 import robotPhoto from "../../assets/media/20250316 FIRST Tech Challenge Alberta Championship 742.jpg"
 import mod from "astro/zod";
 
-const marpSlides = fs.readdirSync('src/pages/learn/slides')
+const marpSlides = fs.readdirSync('src/pages/learn/slides').filter(f => !f.endsWith(".astro"))
 const pptx = fs.readdirSync('public/content/slides').filter(f => f.endsWith(".pptx"));
 const slideshows = import.meta.glob('./slides/*.astro', { eager: true });
 const slides = Object.entries(slideshows).map(([path, object]) => ({
