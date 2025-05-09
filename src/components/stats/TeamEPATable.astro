@@ -1,0 +1,49 @@
+---
+import "../../styles/graph.css";
+---
+
+<div class="segment colored">
+    <h2>Team Data</h2>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        id, impedit accusamus sint laudantium laborum possimus molestias, eos
+        recusandae quasi doloremque quis.
+    </p>
+    <div id="table"></div>
+</div>
+
+<script>
+    import json from "../../data/Alberta_team_data.json";
+    import { parseTeamData } from "../../scripts/TeamData";
+
+    async function createTableFromJson(tableContainerId: string) {
+        try {
+            const jsonData = json;
+
+            const table = document.createElement("table");
+            table.classList.add("my-table");
+
+            // Create table header
+            const thead = table.createTHead();
+            const headerRow = thead.insertRow();
+            const keys = Object.keys(jsonData);
+
+            // Create table body
+            const tbody = table.createTBody();
+
+            keys.forEach((key) => {
+                const row = tbody.insertRow();
+                const cell = row.insertCell();
+                cell.textContent = parseTeamData(jsonData, key).opr.toString();
+            });
+
+            // Append table to container
+            const tableContainer = document.getElementById(tableContainerId);
+            if (tableContainer != null) tableContainer.appendChild(table);
+        } catch (error) {
+            console.error("Error creating table:", error);
+        }
+    }
+
+    createTableFromJson("table");
+</script>

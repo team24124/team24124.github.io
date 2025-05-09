@@ -17,7 +17,7 @@ import '../../styles/graph.css'
 	import { type TeamData, parseTeamData } from "../../scripts/TeamData";
 	import Plotly, { type Data, type TypedArray } from "plotly.js-dist-min";
 	import { type EPASelectorState } from "./EPATypeSelector.astro";
-	import json from "../../data/Alberta_team_data.json";
+	import json from "../../data/World_team_data_LATEST.json";
 
 	var teams: TeamData[] = [parseTeamData(json, "24124"), parseTeamData(json, "26145")]
 	var modes: EPASelectorState = { totalEPAEnabled: true, autoEPAEnabled: false, teleEPAEnabled: false }

@@ -35,6 +35,7 @@ body {
 
 .segment {
     margin: 1vh 1vw;
+    overflow-x: hidden;
 }
 
 .segment img {
@@ -44,6 +45,12 @@ body {
 
 .segment .disclaimer {
     color: var(--gray-highlight)
+}
+
+.segment.colored {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    margin: 0;
 }
 
 #banner {
