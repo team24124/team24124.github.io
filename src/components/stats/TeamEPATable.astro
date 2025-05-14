@@ -22,7 +22,37 @@ import "../../styles/graph.css";
 
   const element = document.getElementById("wrapper");
   const grid = new Grid({
-    columns: ["Team Number", "Total EPA", "Auto EPA", "Tele EPA", "OPR", "Auto OPR", "Tele OPR", "End OPR"],
+    columns: [
+      "Team Number",
+      {
+        name: "Total EPA",
+        sort: { compare: (a: number, b: number) => compareValue(a, b)}
+      }, 
+      {
+        name: "Auto EPA",
+        sort: { compare: (a: number, b: number) => compareValue(a, b)}
+      }, 
+      {
+        name: "Tele EPA",
+        sort: { compare: (a: number, b: number) => compareValue(a, b)}
+      }, 
+      {
+        name: "OPR",
+        sort: { compare: (a: number, b: number) => compareValue(a, b)}
+      }, 
+      {
+        name: "Auto OPR",
+        sort: { compare: (a: number, b: number) => compareValue(a, b)}
+      }, 
+      {
+        name: "Tele OPR",
+        sort: { compare: (a: number, b: number) => compareValue(a, b)}
+      }, 
+      {
+        name: "End OPR",
+        sort: { compare: (a: number, b: number) => compareValue(a, b)}
+      },
+    ],
     pagination: true,
     sort: true,
     search: true,
@@ -32,4 +62,9 @@ import "../../styles/graph.css";
   if(element != null) {
     grid.render(element);
   }
+
+  function compareValue(numA: number, numB: number){
+    return (numA - numB)*100;
+  }
+
 </script>

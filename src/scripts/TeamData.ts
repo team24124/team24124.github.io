@@ -24,7 +24,7 @@ export function parseTeamData(json: Record<string, TeamData>, teamNumber: string
 export function parseAllTeamData(json: Record<string, TeamData>) {
     const teamData: (string | number)[][] = [];
     const teams = Object.entries(json)
-    console.log(teams)
+
     teams.map(([key, data]) => {
         teamData.push([
             key, 
