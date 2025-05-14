@@ -111,3 +111,9 @@
     height: 50%;
     text-overflow: ellipsis;
 }
+
+@media only screen and (max-width: 940px) {
+    .ReactTags__selected {
+        max-width: 400px;
+    }
+}
