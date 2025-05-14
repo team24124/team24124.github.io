@@ -1,5 +1,6 @@
 ---
 import "../../styles/graph.css";
+
 ---
 
 <div class="segment colored">
@@ -9,41 +10,26 @@ import "../../styles/graph.css";
         id, impedit accusamus sint laudantium laborum possimus molestias, eos
         recusandae quasi doloremque quis.
     </p>
-    <div id="table"></div>
+    
+    <div id="wrapper"></div>
+    
 </div>
 
 <script>
-    import json from "../../data/Alberta_team_data.json";
-    import { parseTeamData } from "../../scripts/TeamData";
+  import { Grid } from "gridjs";
+  import data from "../../data/World_team_data_LATEST.json";
+  import { parseAllTeamData } from "../../scripts/TeamData";
 
-    async function createTableFromJson(tableContainerId: string) {
-        try {
-            const jsonData = json;
+  const element = document.getElementById("wrapper");
+  const grid = new Grid({
+    columns: ["Team Number", "Total EPA", "Auto EPA", "Tele EPA", "OPR", "Auto OPR", "Tele OPR", "End OPR"],
+    pagination: true,
+    sort: true,
+    search: true,
+    data: parseAllTeamData(data),
+    })
 
-            const table = document.createElement("table");
-            table.classList.add("my-table");
-
-            // Create table header
-            const thead = table.createTHead();
-            const headerRow = thead.insertRow();
-            const keys = Object.keys(jsonData);
-
-            // Create table body
-            const tbody = table.createTBody();
-
-            keys.forEach((key) => {
-                const row = tbody.insertRow();
-                const cell = row.insertCell();
-                cell.textContent = parseTeamData(jsonData, key).opr.toString();
-            });
-
-            // Append table to container
-            const tableContainer = document.getElementById(tableContainerId);
-            if (tableContainer != null) tableContainer.appendChild(table);
-        } catch (error) {
-            console.error("Error creating table:", error);
-        }
-    }
-
-    createTableFromJson("table");
+  if(element != null) {
+    grid.render(element);
+  }
 </script>

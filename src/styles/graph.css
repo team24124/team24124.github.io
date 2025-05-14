@@ -1,3 +1,4 @@
+/* Team EPA Graphs */
 .selectors {
     background-color: #ffffff;
     padding: 10px 20px;
@@ -115,5 +116,86 @@
 @media only screen and (max-width: 940px) {
     .ReactTags__selected {
         max-width: 400px;
+    }
+}
+
+/* Team EPA Table */
+.wrapper {
+    margin: 10px;
+}
+
+table {
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    .gridjs-th-content {
+        float: left;
+    }
+    
+    .gridjs-sort {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        float: right;
+    }
+    .gridjs-sort:hover {
+        cursor: pointer;
+    }
+
+    .gridjs-sort-neutral::after {
+        content: url('/src/assets/icons/sort-solid.svg');
+        display: block;
+        height: 0.5em;
+        width: 0.7em;
+    }
+    .gridjs-sort-asc::after {
+        content: url('/src/assets/icons/sort-up-solid.svg');
+        display: block;
+        height: 0.5em;
+        width: 0.7em;
+    }
+    .gridjs-sort-desc::after {
+        content: url('/src/assets/icons/sort-down-solid.svg');
+        display: block;
+        height: 0.5em;
+        width: 0.7em;
+    }
+
+    tbody {
+        tr:nth-child(even) {
+            background-color: var(--white-secondary);
+        }
+        tr:hover {
+            background-color: var(--gray-highlight);
+        }
+        td{
+            padding: 5px 5px;
+        }
+    }
+}
+
+.gridjs-search {
+    input[type=search] {
+        padding: 12px 8px;
+        margin: 2px 0;
+        box-sizing: border-box;
+    }
+}
+
+.gridjs-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .gridjs-pages {
+        float: right;
+        button {
+            min-width: 2rem;
+            height: 1.4rem;
+            background-color: var(--white-secondary);
+            border: none;
+        }
+        button:hover {
+            background-color: var(--gray-highlight);
+        }
     }
 }

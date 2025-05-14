@@ -20,3 +20,27 @@ export interface TeamData {
 export function parseTeamData(json: Record<string, TeamData>, teamNumber: string): TeamData {
     return json[teamNumber];
 }
+
+export function parseAllTeamData(json: Record<string, TeamData>) {
+    const teamData: (string | number)[][] = [];
+    const teams = Object.entries(json)
+    console.log(teams)
+    teams.map(([key, data]) => {
+        teamData.push([
+            key, 
+            data.epa_total.toFixed(2), 
+            data.auto_total.toFixed(2), 
+            data.tele_total.toFixed(2),
+            data.opr.toFixed(2),
+            data.opr_auto.toFixed(2),
+            data.opr_tele.toFixed(2),
+            data.opr_end.toFixed(2),
+        ])
+    })
+    
+    return teamData;
+}
+
+function roundTo(value: number, decimals: number){
+
+}
