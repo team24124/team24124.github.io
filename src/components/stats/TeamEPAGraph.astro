@@ -61,9 +61,19 @@ import '../../styles/graph.css'
 		return {
 			type: 'scatter',
 			y:data,
-			mode: 'lines',
-			name: name
+			mode: 'lines+markers',
+			name: name,
+			marker: {
+				size: 8,
+				symbol: getRandomSymbol()
+			}
 		}
+	}
+
+	function getRandomSymbol(){
+		const symbols = ['circle', 'square', 'diamond', 'cross', 'star'];
+		return symbols[Math.floor(Math.random() * symbols.length)]; // return random symbol
+		
 	}
 
 	function makePlot(title: string, data: TeamData[]) {
