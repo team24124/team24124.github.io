@@ -1,6 +1,5 @@
 ---
 import "../../styles/graph.css";
-
 ---
 
 <div class="segment colored">
@@ -10,66 +9,87 @@ import "../../styles/graph.css";
         id, impedit accusamus sint laudantium laborum possimus molestias, eos
         recusandae quasi doloremque quis.
     </p>
-    
+
+    <form>
+      <input type="text" id="eventCode" name="Event Code", placeholder="Enter a valid event code.">
+      <button id="submitEventCode">Submit</button>
+    </form>
     <div id="wrapper"></div>
     
 </div>
 
 <script>
   import { Grid } from "gridjs";
+  import { parseAllTeamData, parseTeamDataFromEventCode } from "../../scripts/TeamData";
+
+  // DATA FOR TABLE
   import data from "../../data/World_team_data_LATEST.json";
-  import { parseAllTeamData } from "../../scripts/TeamData";
+  import event_data from "../../data/event_data.json"
 
-  const element = document.getElementById("wrapper");
-  const grid = new Grid({
-    columns: [
-      "Team Number",
-      {
-        name: "Total EPA",
-        sort: { compare: (a: number, b: number) => compareValue(a, b)}
-      }, 
-      {
-        name: "Auto EPA",
-        sort: { compare: (a: number, b: number) => compareValue(a, b)}
-      }, 
-      {
-        name: "Tele EPA",
-        sort: { compare: (a: number, b: number) => compareValue(a, b)}
-      }, 
-      {
-        name: "OPR",
-        sort: { compare: (a: number, b: number) => compareValue(a, b)}
-      }, 
-      {
-        name: "Auto OPR",
-        sort: { compare: (a: number, b: number) => compareValue(a, b)}
-      }, 
-      {
-        name: "Tele OPR",
-        sort: { compare: (a: number, b: number) => compareValue(a, b)}
-      }, 
-      {
-        name: "End OPR",
-        sort: { compare: (a: number, b: number) => compareValue(a, b)}
-      },
-    ],
-    pagination: true,
-    sort: true,
-    search: true,
-    data: parseAllTeamData(data),
-    language: {
-      'search': {
-        'placeholder': 'Enter a valid team number.'
-      },
+  // Initially render table with all team data
+  const grid = renderTable(parseAllTeamData(data));
+  const submitEvent = document.getElementById("submitEventCode");
+
+  submitEvent?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const eventCodeTextInput = document.getElementById('eventCode') as HTMLInputElement;
+    const event_code = eventCodeTextInput.value;
+
+    if(event_code == null) return;
+
+    let teamData = parseTeamDataFromEventCode(data, event_data, event_code); 
+
+    if(teamData == null){
+      grid.updateConfig(getTableConfig(parseAllTeamData(data))).forceRender();
+      return;
     }
-    })
 
-  if(element != null) {
-    grid.render(element);
-  }
+    grid.updateConfig(getTableConfig(teamData)).forceRender();
+  })
+
+  
 
   function compareValue(numA: number, numB: number){
     return (numA - numB)*100;
+  }
+
+  function renderTable(data: (string | number)[][]){
+    const element = document.getElementById("wrapper");
+    
+    if(element){
+      element.innerHTML = '';
+    }
+
+    const grid = new Grid(getTableConfig(data))
+
+    if(element != null) {
+      grid.render(element);
+    }
+    return grid;
+  }
+
+  function getTableConfig(data: (string | number)[][]){
+    return { 
+      columns: [
+        { name: "Team Number", sort: { compare: (a: number, b: number) => compareValue(a, b)} }, 
+        { name: "Total EPA", sort: { compare: (a: number, b: number) => compareValue(a, b)} }, 
+        { name: "Auto EPA", sort: { compare: (a: number, b: number) => compareValue(a, b)} }, 
+        { name: "Tele EPA", sort: { compare: (a: number, b: number) => compareValue(a, b)} }, 
+        { name: "OPR", sort: { compare: (a: number, b: number) => compareValue(a, b)} }, 
+        { name: "Auto OPR", sort: { compare: (a: number, b: number) => compareValue(a, b)} }, 
+        { name: "Tele OPR", sort: { compare: (a: number, b: number) => compareValue(a, b)} }, 
+        { name: "End OPR", sort: { compare: (a: number, b: number) => compareValue(a, b)} },
+      ],
+      pagination: true,
+      sort: true,
+      search: true,
+      data: data,
+      language: {
+        'search': {
+          'placeholder': 'Enter a valid team number.'
+        },
+      }
+    }
   }
 
 </script>

@@ -127,6 +127,7 @@
 table {
     margin-top: 10px;
     margin-bottom: 5px;
+    width: 100%;
 
     .gridjs-th-content {
         float: left;
@@ -173,8 +174,18 @@ table {
     }
 }
 
+form {
+    input {
+        padding: 6px 4px;
+    }
+    button {
+        padding: 6px 4px;
+    }
+}
+
 .gridjs-search {
     input[type=search] {
+        min-width: 240px;
         padding: 12px 8px;
         margin: 2px 0;
         box-sizing: border-box;
