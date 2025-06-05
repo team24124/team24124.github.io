@@ -15,6 +15,7 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "astro": "^5.7.5",
+    "gridjs": "^6.2.0",
     "markdown-it": "^14.1.0",
     "partytown": "^0.0.0",
     "plotly": "^1.0.6",
