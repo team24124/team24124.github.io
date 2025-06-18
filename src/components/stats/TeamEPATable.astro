@@ -39,6 +39,7 @@ import "../../styles/graph.css";
     if(event_code == null) return;
 
     let teamData = parseTeamDataFromEventCode(data, event_data, event_code); 
+    console.log(teamData)
 
     if(teamData == null){
       grid.updateConfig(getTableConfig(parseAllTeamData(data))).forceRender();

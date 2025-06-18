@@ -52,17 +52,22 @@ export function parseTeamDataFromEventCode(json: Record<string, TeamData>, event
     if(!Object.keys(events).includes(event)) return null;
 
     events[event].team_list.forEach(team => {
+        
         let data = json[team.toString()]
-        teamData.push([
-            team.toString(),
-            data.epa_total.toFixed(2),
-            data.auto_total.toFixed(2), 
-            data.tele_total.toFixed(2),
-            data.opr.toFixed(2),
-            data.opr_auto.toFixed(2),
-            data.opr_tele.toFixed(2),
-            data.opr_end.toFixed(2),
-        ])
+        if(data != null){
+            teamData.push([
+                team.toString(),
+                data.epa_total.toFixed(2),
+                data.auto_total.toFixed(2), 
+                data.tele_total.toFixed(2),
+                data.opr.toFixed(2),
+                data.opr_auto.toFixed(2),
+                data.opr_tele.toFixed(2),
+                data.opr_end.toFixed(2),
+            ])
+        }else{
+            console.log(team)
+        }
     });
 
     return teamData;
