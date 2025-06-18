@@ -50,7 +50,7 @@ body {
 .segment.colored {
     background-color: #ffffff;
     padding: 10px 20px;
-    margin: 0;
+    margin: 5px 0;
     overflow-x: auto;
 }
 
@@ -73,6 +73,8 @@ body {
 
 }
 
+
+/* HEADER */
 #main header {
     padding: 0 0;
     text-align: center;
@@ -148,6 +150,7 @@ body {
     }
 }
 
+/* FOOTER */
 #main footer {
     text-align: left;
     vertical-align: baseline;
@@ -197,14 +200,101 @@ body {
     align-self: center;
 }
 
+/* TEAM PHOTO */
 img#teamPhoto {
     padding: 0;
     margin: 0;
-    width: 100%;
     height: 400px;
     object-fit: cover;
 }
 
+img.full {
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* SPONSORS */
+section#sponsorLogos {
+    display: grid;
+    margin: 20px 0;
+
+    grid-template-columns: 50% 50%;
+    column-gap: 1em;
+    row-gap: 50px;
+
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    img {
+        width: 80%;
+    }
+}
+
+div.sponsorText {
+    display: grid;
+    flex-direction: column;
+    justify-items: center;
+
+    h1 {
+        font-size: x-large;
+        text-align: center;
+        margin: 0;
+    }
+    h3 {
+        color: var(--gray-highlight);
+    }
+}
+
+/* CONTACT */
+#contactlist {
+    padding-inline-start: 20px;
+    li {
+        list-style: none;
+        margin: 5px 5px;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: var(--gray-highlight);
+        }
+    }
+}
+
+#contactform {
+    display: flex;
+    justify-content: center;
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0;
+
+        textarea {
+            margin: 5px 5px;
+            height: 200px;
+        }
+
+        input {
+            margin: 5px 5px;
+            padding: 6px 4px;
+        }
+
+        button {
+            margin: 5px 5px;
+            padding: 12px 4px;
+            background-color: var(--nths_secondary);
+            border: none;
+        }
+        button:hover {
+            cursor: pointer
+        }
+    }
+    
+}
+
+
+/* RESIZE CERTAIN ELEMENTS TO FIT SMALL SCREENS */
 @media only screen and (max-width: 940px) {
 
     .footer-items {
@@ -225,7 +315,7 @@ img#teamPhoto {
     }
 
     .segment {
-        margin: 0 4vw;
+        margin: 5px 4vw;
     }
 
     .container {
