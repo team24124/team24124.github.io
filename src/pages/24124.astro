@@ -3,13 +3,11 @@ import Page from "../layouts/Page.astro";
 
 import teamPic from "../assets/teams/intothedeep_24.jpg";
 import botPic from "../assets/media/robotics-17.jpg";
-import { Image } from "astro:assets";
-import statsPic from "../assets/subteams/statsTeam.jpg";
 ---
 
 <Page>
     <div class="segment reverse">
-        <Image class="full" src={teamPic} alt="Into The Deep League Championship" />
+        <img class="full" src={teamPic.src} alt="Team 24124 Robot Photo">
         <div class="segment-content">
             
             <h2>About <span class="keyword">Team 24124</span></h2>
@@ -31,7 +29,7 @@ import statsPic from "../assets/subteams/statsTeam.jpg";
         </div>
     </div>
     <div class="segment">
-        <Image class="full" src={botPic} alt="Team 24124 Robot Photo" />
+        <img class="full" src={botPic.src} alt="Team 24124 Robot Photo">
         <div class="segment-content">
             <h2>Mentorship</h2>
             <p>
@@ -46,7 +44,7 @@ import statsPic from "../assets/subteams/statsTeam.jpg";
         </div>
     </div>
     <div class="segment reverse">
-        <Image src={statsPic} alt="Nighthawks Statistics at League Championship" />
+        <img class="full" src={botPic.src} alt="Team 24124 Robot Photo">
         <div class="segment-content">
             <h2>Statistics</h2>
             <p>North Star offers a tool to track and analyze a robot's performance over time. By analyzing key statistics during FIRST Tech events, a team can identify strengths and areas for improvement. This data-driven approach allows for informed decision-making in robot design and strategy development, ultimately enhancing overall performance in future matches.</p>

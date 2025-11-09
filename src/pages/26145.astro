@@ -3,12 +3,11 @@ import Page from "../layouts/Page.astro";
 
 import teamPic from "../assets/teams/intothedeep_26.jpg";
 import botPic from "../assets/media/robotics-17.jpg";
-import { Image } from "astro:assets";
 ---
 
 <Page>
     <div class="segment reverse">
-        <Image src={teamPic} alt="Team 26145 Robot Photo" />
+        <img class="full" src={teamPic.src} alt="Team 26145 Robot Photo">
         <div class="segment-content">
             
             <h2>About <span class="keyword">Team 26145</span></h2>
@@ -29,11 +28,11 @@ import { Image } from "astro:assets";
     </div>
 
     <div class="segment">
-        <Image src={botPic} alt="Team 26145 Robot Photo" />
+        <img class="full" src={botPic.src} alt="Team 26145 Robot Photo">
         <div class="segment-content">
             <h2>Mentorship & Growth</h2>
             <p>
-                Team 26145 benefits from direct mentorship from Team 24124 North Star members. Guidance is provided in robot design, programming, and competition strategy to help Pathfinder members develop essential robotics skills.
+                Team 26145 benefits from direct mentorship from <a href="/24124">Team 24124 North Star</a> members. Guidance is provided in robot design, programming, and competition strategy to help Pathfinder members develop essential robotics skills.
             </p>
             <p>
                 By participating in the Nighthawks Robotics ecosystem, Team 26145 fosters a collaborative learning environment. Members are encouraged to share knowledge and support each other, helping the team grow and succeed in FIRST competitions.
@@ -43,5 +42,4 @@ import { Image } from "astro:assets";
             </p>
         </div>
     </div>
-    
 </Page>

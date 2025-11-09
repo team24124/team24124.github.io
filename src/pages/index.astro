@@ -7,8 +7,6 @@ import robotPic from "../assets/robotfull.png";
 import HeroSection from "../components/HeroSection.astro";
 import Divider from "../components/Divider.astro";
 import awardPic from "../assets/media/awards.png";
-
-import Image from "astro/components/Image.astro";
 ---
 
 <!-- HERO SECTION -->
@@ -24,7 +22,7 @@ import Image from "astro/components/Image.astro";
 
 <Page title="Home">
   <div class="segment reverse" id="about-section">
-    <Image src={teamPhoto} alt="2024-2025 Full Team Photo" />
+    <img src={teamPhoto.src} alt="2024-2025 Full Team Photo">
     <div class="segment-content">
       <h2>About Nighthawks Robotics</h2>
       <p>
@@ -56,7 +54,7 @@ import Image from "astro/components/Image.astro";
   <Divider />
 
   <div class="segment reverse">
-    <Image src={awardPic} alt="Into the Deep Awards" />
+    <img src={awardPic.src} alt="Into the Deep Awards">
     <div class="segment-content">
       <h2>Become a Sponsor</h2>
 
