@@ -2,11 +2,13 @@
 import "../styles/style.css";
 import NavDropdown from "./nav/NavDropdown.astro";
 import NavItem from "./nav/NavItem.astro";
+
+import logo from '../assets/nthsbird.png';
 ---
 
 <header id="main-header">
   <a href="/">
-    <img class="logo" src="/src/assets/nthsbird.png" alt="Logo" />
+    <img class="logo" src={logo.src} alt="Logo" />
   </a>
 
 
