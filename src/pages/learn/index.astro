@@ -2,6 +2,7 @@
 import Page from "../../layouts/Page.astro"
 import fs from 'fs';
 import robotPhoto from "../../assets/media/20250316 FIRST Tech Challenge Alberta Championship 742.jpg"
+import { Image } from "astro:assets";
 
 const marpSlides = fs.readdirSync('src/pages/learn/slides').filter(f => !f.endsWith(".astro"))
 const pptx = fs.readdirSync('public/content/slides').filter(f => f.endsWith(".pptx"));
@@ -18,7 +19,7 @@ const exerciseFiles = fs.readdirSync('public/content/exercises').filter(f => f.e
 <Page title="Learn">
 
   <div class="segment reverse">
-    <img class="full" src={robotPhoto.src} alt="Nighthawks Robotics Team Photo">
+    <Image class="full" src={robotPhoto} alt="24124 Into The Deep Robot" />
     <div class="segment-content">
       <h2>Nighthawks <span class="keyword">Educational Materials</span></h2>
       <p>

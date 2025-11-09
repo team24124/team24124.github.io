@@ -3,11 +3,12 @@ import Page from "../layouts/Page.astro";
 
 import teamPic from "../assets/roboticslogo-iconcolored.png";
 import botPic from "../assets/roboticslogo-iconcolored.png";
+import { Image } from "astro:assets";
 ---
 
 <Page>
     <div class="segment reverse">
-        <img class="full" src={teamPic.src} alt="Team 30645 Robot Photo">
+        <Image class="full" src={teamPic} alt="Team 30645" />
         <div class="segment-content">
             
             <h2>About <span class="keyword">Team 30645</span></h2>
@@ -28,7 +29,7 @@ import botPic from "../assets/roboticslogo-iconcolored.png";
     </div>
 
     <div class="segment">
-        <img class="full" src={botPic.src} alt="Team 30645 Robot Photo">
+        <Image class="full" src={botPic} alt="Team 30645 Robot Photo" />
         <div class="segment-content">
             <h2><span class="keyword">FIRST</span> Like a Girl!</h2>
             <p>

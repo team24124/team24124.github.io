@@ -11,6 +11,7 @@ import statsPic from "../assets/subteams/statsTeam.jpg";
 import businessPic from "../assets/subteams/businessTeam.jpg";
 import mechPic from "../assets/subteams/mechDesign.jpg";
 import digitalPic from "../assets/subteams/digitalDesign.jpg";
+import { Image } from "astro:assets";
 ---
 
 <!-- HERO SECTION -->
@@ -28,7 +29,7 @@ import digitalPic from "../assets/subteams/digitalDesign.jpg";
 
   <!-- Build -->
   <div class="segment" id="team-section">
-    <img src={buildPic.src} alt="Build Team" />
+    <Image src={buildPic} alt="Build Team" />
     <div class="segment-content">
       <h2>Build</h2>
       <p>Learn how to use different components to build the robot.</p>
@@ -41,7 +42,7 @@ import digitalPic from "../assets/subteams/digitalDesign.jpg";
 
   <!-- Programming -->
   <div class="segment reverse">
-    <img src={programmingPic.src} alt="Programming Team" />
+    <Image src={programmingPic} alt="Programming Team" />
     <div class="segment-content">
       <h2>Programming</h2>
       <p>Learn to program the robot so that it gets to where it needs to be.</p>
@@ -54,7 +55,7 @@ import digitalPic from "../assets/subteams/digitalDesign.jpg";
 
   <!-- Drive -->
   <div class="segment">
-    <img src={drivePic.src} alt="Drive Team" />
+    <Image src={drivePic} alt="Drive Team" />
     <div class="segment-content">
       <h2>Drive</h2>
       <p>Learn to strategize for the season's game and navigate the robot in competitions.</p>
@@ -67,7 +68,7 @@ import digitalPic from "../assets/subteams/digitalDesign.jpg";
 
   <!-- Mechanical Design -->
   <div class="segment reverse">
-    <img src={mechPic.src} alt="Mechanical Design Team" />
+    <Image src={mechPic} alt="Mechanical Design Team" />
     <div class="segment-content">
       <h2>Mechanical Design</h2>
       <p>Learn how to design in CAD software to create parts of the robot.</p>
@@ -80,7 +81,7 @@ import digitalPic from "../assets/subteams/digitalDesign.jpg";
 
   <!-- Statistics -->
   <div class="segment">
-    <img src={statsPic.src} alt="Statistics Team" />
+    <Image src={statsPic} alt="Statistics Team" />
     <div class="segment-content">
       <h2>Statistics</h2>
       <p>Learn how to analyze how well a team is performing.</p>
@@ -93,7 +94,7 @@ import digitalPic from "../assets/subteams/digitalDesign.jpg";
 
   <!-- Digital Design -->
   <div class="segment reverse">
-    <img src={digitalPic.src} alt="Digital Design Team" />
+    <Image src={digitalPic} alt="Digital Design Team" />
     <div class="segment-content">
       <h2>Digital Design</h2>
       <p>Learn to create visual media to represent and promote the team.</p>
@@ -106,7 +107,7 @@ import digitalPic from "../assets/subteams/digitalDesign.jpg";
 
   <!-- Business -->
   <div class="segment">
-    <img src={businessPic.src} alt="Business Team" />
+    <Image src={businessPic} alt="Business Team" />
     <div class="segment-content">
       <h2>Business</h2>
       <p>Learn how to manage outreach, fundraising, and awards submissions.</p>
