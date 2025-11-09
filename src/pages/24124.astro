@@ -1,12 +1,54 @@
 ---
 import Page from "../layouts/Page.astro";
 
+import teamPic from "../assets/teams/intothedeep_24.jpg";
+import botPic from "../assets/media/robotics-17.jpg";
 ---
 
 <Page>
-    <div class="segment">
-        <h1>Team 24124</h1>
-        <p>Nighthawks North Star is named after the prestigious Leadership Award at our school. As the first robotics team founded at North Trail, North Star has proudly competed in FTC since the 2023–24 Centerstage season. As a senior, competitive team, North Star has proudly launched two new learning teams and provided them with extensive mentorship. </p>
+    <div class="segment reverse">
+        <img class="full" src={teamPic.src} alt="Team 24124 Robot Photo">
+        <div class="segment-content">
+            
+            <h2>About <span class="keyword">Team 24124</span></h2>
+            <p>
+                <b>Nighthawks North Star</b> is a high school robotics team from <b>North Trail High School</b> in <b>Calgary, Alberta</b> with three other teams competing in the <i>FIRST Tech Challenge</i>.
+            </p>
+            <p>
+                Team 24124, named after the prestigious Leadership Award at our school, is the first robotics team founded at North Trail. North Star has proudly competed in FTC since the 2023-24 Centerstage season. As a senior, competitive team, North Star has launched three new learning teams and provided them with extensive mentorship.
+            </p>
+
+            <h2>Achievements</h2>
+            <ul>
+                <li>Winning Alliance - 1st Team Selected @ Nii'miis'stii League Tournament</li>
+                <li>Inspires Award - 3rd Place @ Nii'miis'stii League Tournament</li>
+                <li>Playoff Team @ Alberta Championships</li>
+            </ul>
+
+            
+        </div>
     </div>
-   
+    <div class="segment">
+        <img class="full" src={botPic.src} alt="Team 24124 Robot Photo">
+        <div class="segment-content">
+            <h2>Mentorship</h2>
+            <p>
+                As the founding team of Nighthawks Robotics, Team 24124 takes pride in mentoring three learning teams: <a href="/26145">Team 26145 Nighthawks Pathfinder</a>, <a href="/30645">Team 30645 Aurora</a>, and <a href="/33517">Team 33517 New Horizons</a>. North Star members provide guidance in robot design, programming, and competition strategies, helping our teams develop skills and confidence within FIRST robotics.
+            </p>
+            <p>
+                Through mentorship, Team 24124 fosters a collaborative environment where knowledge is shared, and all teams can thrive. This commitment to mentorship strengthens the Nighthawks Robotics program and contributes to the growth of the robotics community at North Trail High School. We are dedicated to inspiring the next generation of roboticists and leaders, ensuring that our legacy continues through the success of our learning teams.
+            </p>
+            <p>
+                Nighthawks North Star is proud to have founded and mentored an inclusive learning space for female students interested in robotics through Team 30645 Aurora. By providing dedicated support and resources, North Star helps foster a welcoming environment where these students can thrive, learn, and contribute to the broader robotics community.
+            </p>
+        </div>
+    </div>
+    <div class="segment reverse">
+        <img class="full" src={botPic.src} alt="Team 24124 Robot Photo">
+        <div class="segment-content">
+            <h2>Statistics</h2>
+            <p>North Star offers a tool to track and analyze a robot's performance over time. By analyzing key statistics during FIRST Tech events, a team can identify strengths and areas for improvement. This data-driven approach allows for informed decision-making in robot design and strategy development, ultimately enhancing overall performance in future matches.</p>
+            <p>The <a href="/stats"><b>Nighthawks Robotics Statistics Dashboard</b></a> was developed by Team 24124's programming subteam as an open-source project to support not only our own teams but also the broader FIRST Tech Challenge community. By sharing this tool, we aim to empower other teams to leverage data analytics for improved performance and strategic planning in their robotics competitions.</p>
+        </div>
+    </div>
 </Page>

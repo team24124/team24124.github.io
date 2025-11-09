@@ -1,10 +1,9 @@
 ---
-const { text } = Astro.props; 
+const { text } = Astro.props;
 ---
-
 <li class="dropdown">
-  { text } ˅
-    <div class="dropdown-content">
-      <slot />
-    </div>
+  <a href="#">{text}</a>
+  <div class="dropdown-content">
+    <slot />
+  </div>
 </li>

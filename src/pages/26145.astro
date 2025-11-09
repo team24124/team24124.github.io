@@ -1,12 +1,45 @@
 ---
 import Page from "../layouts/Page.astro";
 
+import teamPic from "../assets/teams/intothedeep_26.jpg";
+import botPic from "../assets/media/robotics-17.jpg";
 ---
 
 <Page>
-    <div class="segment">
-        <h1>Team 26145</h1>
-        <p>Nighthawks Pathfinder was the first new addition to the Nighthawks Robotics flock. Serving as a dedicated learning team, Pathfinder benefits from the guidance and mentorship of North Star members. Since competing in the 2024–25 Into The Deep season, Team 26145 has made a lasting impact on our program.</p>
+    <div class="segment reverse">
+        <img class="full" src={teamPic.src} alt="Team 26145 Robot Photo">
+        <div class="segment-content">
+            
+            <h2>About <span class="keyword">Team 26145</span></h2>
+            <p>
+                <b>Nighthawks Pathfinder</b> was the first new addition to the Nighthawks Robotics program. Serving as a dedicated learning team, Pathfinder benefits from the guidance and mentorship of North Star members.
+            </p>
+            <p>
+                Since competing in the 2024-25 Into The Deep season, Team 26145 has made a lasting impact on our program. The team focuses on learning engineering, programming, and competition strategies while contributing to the success of the Nighthawks Robotics program.
+            </p>
+
+            <h2>Achievements</h2>
+            <ul>
+                <li>Finalist Alliance - 1st Team Selected @ Nii'miis'stii League Tournament</li>
+                <li>Inspires Award - 2nd Place @ Nii'miis'stii League Tournament</li>
+                <li>Playoff Team @ Alberta Championships</li>
+            </ul>
+        </div>
     </div>
-   
+
+    <div class="segment">
+        <img class="full" src={botPic.src} alt="Team 26145 Robot Photo">
+        <div class="segment-content">
+            <h2>Mentorship & Growth</h2>
+            <p>
+                Team 26145 benefits from direct mentorship from Team 24124 North Star members. Guidance is provided in robot design, programming, and competition strategy to help Pathfinder members develop essential robotics skills.
+            </p>
+            <p>
+                By participating in the Nighthawks Robotics ecosystem, Team 26145 fosters a collaborative learning environment. Members are encouraged to share knowledge and support each other, helping the team grow and succeed in FIRST competitions.
+            </p>
+            <p>
+                Pathfinder also works closely with other learning teams, providing opportunities to engage in mentorship and teamwork, strengthening the overall robotics community at North Trail High School.
+            </p>
+        </div>
+    </div>
 </Page>

@@ -1,0 +1,44 @@
+---
+const { targetId, text } = Astro.props;
+---
+
+<a class="scroll-button" href={`#${targetId}`}>
+  {text}
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+  </svg>
+</a>
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-button {
+  padding: 12px 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white-primary);
+  background-color: transparent;
+  border: 0.8px solid var(--white-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.scroll-button:hover {
+  background-color: var(--white-primary);
+  color: var(--nths_primary);
+}
+
+.scroll-button svg {
+  width: 16px;
+  height: 16px;
+}
+</style>

@@ -1,35 +1,38 @@
 ---
-import "../styles/style.css"
-import icon from "../assets/roboticslogo-icon.png"
+import "../styles/style.css";
+import icon from "../assets/roboticslogo-iconcolored.png";
 ---
 
 <footer>
-    <div class="footer-items">
-      <div class="item group">
-        <span class="footer-item">
-          <p class="footer-item-title"><b>Our Teams</b></p>
-          <div class="footer-item-content">
-            <a href="https://ftc-events.firstinspires.org/team/24124"><p>24124</p></a>
-            <a href="https://ftc-events.firstinspires.org/team/26145"><p>26145</p></a>
-            <a href="https://ftc-events.firstinspires.org/team/30645"><p>30645</p></a>
-          </div>
-        </span>
-
-        <span class="footer-item">
-          <p><b>About</b></p>
-          <div class="footer-item-content">
-            <a href="https://www.firstinspires.org/robotics/ftc"><p>FIRST Robotics</p></a>
-            <a href=""><p>Our Team</p></a>
-          </div>
-        </span>
-
-        <span class="footer-item">
-          <p><b>Sponsor Us</b></p>
-          <a href="https://www.educationmatters.ca/project-matters/north-trail-high-school-nighthawks-robotics-steam-team-fundraising-campaign/"><p>Education Matters</p></a>
-          <a href="contact"><p>Contact</p></a>
-        </span>  
-      </div>
-      <img class="footer-logo" src={icon.src} width="160px">
+  <div class="footer-items">
+    <!-- Footer columns -->
+    <div class="footer-item">
+      <p class="footer-item-title"><b>Our Teams</b></p>
+      <a href="https://ftc-events.firstinspires.org/team/24124">24124 North Star</a>
+      <a href="https://ftc-events.firstinspires.org/team/26145">26145 Pathfinder</a>
+      <a href="https://ftc-events.firstinspires.org/team/30645">30645 Aurora</a>
+      <a href="https://ftc-events.firstinspires.org/team/33517">33517 New Horizons</a>
     </div>
-    <p class="footer-disclaimer">No official affiliation with <b>North Trail High School</b> or <b>FIRST Robotics.</b></p>
-  </footer>
+
+    <div class="footer-item">
+      <p class="footer-item-title"><b>About</b></p>
+      <a href="https://www.firstinspires.org/robotics/ftc">FIRST Robotics</a>
+      <a href="">Our Team</a>
+    </div>
+
+    <div class="footer-item">
+      <p class="footer-item-title"><b>Sponsor Us</b></p>
+      <a href="https://www.educationmatters.ca/project-matters/north-trail-high-school-nighthawks-robotics-steam-team-fundraising-campaign/">Education Matters</a>
+      <a href="contact">Contact</a>
+    </div>
+
+    <!-- Footer logo -->
+    <div class="footer-item">
+      <img class="footer-logo" src={icon.src} width="160px" alt="Nighthawks Logo">
+    </div>
+  </div>
+
+  <p class="footer-disclaimer">
+    No official affiliation with <b>North Trail High School</b> or <b>FIRST Robotics</b>.
+  </p>
+</footer>

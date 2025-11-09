@@ -1,12 +1,42 @@
 ---
 import Page from "../layouts/Page.astro";
 
+import teamPic from "../assets/roboticslogo-iconcolored.png";
+import botPic from "../assets/roboticslogo-iconcolored.png";
 ---
 
 <Page>
-    <div class="segment">
-        <h1>Team 30645</h1>
-        <p>Nighthawks Aurora is the newest member of the Nighthawks Robotics family. As an all-girls learning team, Aurora is dedicated to empowering women in STEM while embracing the core values of FIRST. Founded during the 2024–25 off-season, Aurora is planning to make its mark in the 2025–26 Decode season.</p>
+    <div class="segment reverse">
+        <img class="full" src={teamPic.src} alt="Team 30645 Robot Photo">
+        <div class="segment-content">
+            
+            <h2>About <span class="keyword">Team 30645</span></h2>
+            <p>
+                <b>Nighthawks Aurora</b> is one of the newest members of the Nighthawks Robotics family. As an all-girls learning team, Aurora is dedicated to empowering women in STEM while embracing the core values of FIRST.
+            </p>
+            <p>
+                Founded during the 2024-25 Spring off-season, Aurora is preparing to make its mark in the 2025-26 Decode season. The team focuses on learning engineering, programming, and competition strategies, while contributing to the growth of the Nighthawks Robotics program.
+            </p>
+
+            <h2>Goals & Achievements</h2>
+            <ul>
+                <li>Promoting female participation in STEM through hands-on robotics experience</li>
+                <li>Active collaboration with senior team members for mentorship and guidance</li>
+                <li>Planning for successful participation in the 2025-26 Decode season</li>
+            </ul>
+        </div>
     </div>
-   
+
+    <div class="segment">
+        <img class="full" src={botPic.src} alt="Team 30645 Robot Photo">
+        <div class="segment-content">
+            <h2><span class="keyword">FIRST</span> Like a Girl!</h2>
+            <p>
+                Aurora receives mentorship from <a href="/24124">Team 24124 North Star</a> members, who provide guidance in robot design, programming, and competition strategies. This support helps Aurora members develop essential robotics skills and confidence.
+            </p>
+            <p>
+                Aurora is an all-girls team dedicated to fostering a supportive and inclusive environment for female students interested in robotics. Aurora hopes to continue inspiring the inclusion and empowerment of women, not just in robotics but in all areas of life.
+            </p>
+        </div>
+    </div>
 </Page>

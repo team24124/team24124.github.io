@@ -4,23 +4,30 @@ import NavDropdown from "./nav/NavDropdown.astro";
 import NavItem from "./nav/NavItem.astro";
 ---
 
-<header>
-    <nav>
-        <ul>
-            <NavItem href="/">Home</NavItem>
-            <NavDropdown text="About">
-                <a href="/theTeam">The Team</a>
-                <a href="/first">FIRST</a>
-                <a href="#">Our School</a>
-            </NavDropdown>
-            <NavDropdown text="Teams">
-                <a href="/24124">24124</a>
-                <a href="/26145">26145</a>
-                <a href="/30645">30645</a>
-            </NavDropdown>
-            <NavItem href="/learn">Learn</NavItem>
-            <NavItem href="/stats">Statistics</NavItem>
-            <NavItem href="/contact">Contact Us</NavItem>
-        </ul>
-    </nav>
+<header id="main-header">
+  <a href="/">
+    <img class="logo" src="/src/assets/nthsbird.png" alt="Logo" />
+  </a>
+
+
+  <nav>
+    <NavItem href="/">Home</NavItem>
+
+    <NavDropdown text="About">
+      <a href="/theTeam">The Team</a>
+      <a href="/first">FIRST</a>
+      <a href="https://northtrail.cbe.ab.ca/">Our School</a>
+    </NavDropdown>
+
+    <NavDropdown text="Teams">
+      <a href="/24124">24124 North Star</a>
+      <a href="/26145">26145 Pathfinder</a>
+      <a href="/30645">30645 Aurora</a>
+      <a href="/33517">33517 New Horizons</a>
+    </NavDropdown>
+
+    <NavItem href="/learn">Learn</NavItem>
+    <NavItem href="/stats">Statistics</NavItem>
+    <NavItem href="/contact">Contact Us</NavItem>
+  </nav>
 </header>

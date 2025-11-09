@@ -1,0 +1,77 @@
+---
+import ScrollButton from './ScrollButton.astro';
+import AnimatedContent from './AnimatedContent';
+
+const { title, subtitle, imageUrl, buttonText, buttonTargetId } = Astro.props;
+---
+
+<section class="hero-section">
+  <div class="hero-text">
+    <AnimatedContent client:load distance={100} direction="vertical" delay={0.5} onComplete={() => {}}>
+      <h1 set:html={title}></h1>
+      <p>{subtitle}</p>
+      <ScrollButton targetId={buttonTargetId} text={buttonText} />
+    </AnimatedContent>
+    
+  </div>
+
+  <div class="hero-image">
+    <img src={imageUrl.src ? imageUrl.src : imageUrl} alt="Hero Image" draggable="false" oncontextmenu="return false;"/>
+  </div>
+
+  <div class="scroll-down-arrow"></div>
+</section>
+
+<style>
+.hero-section {
+  display: flex;
+  align-items: center;
+  min-height: 100vh; /* full viewport height */
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+}
+
+.hero-text {
+  color: var(--white-primary);
+  max-width: 45%;
+  padding-left: 10%;
+  margin-right: 160px; /* space between text and image */
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero-text p {
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.hero-image {
+  position: relative;
+  left: -125px; /* move image left toward text */
+}
+
+.hero-image img {
+  margin-top: 50px;
+  width: 750px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 15px;
+  height: 15px;
+  border-bottom: 3px solid var(--white-primary);
+  border-right: 3px solid var(--white-primary);
+}
+</style>

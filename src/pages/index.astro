@@ -1,80 +1,87 @@
 ---
 import Page from "../layouts/Page.astro";
 import teamPhoto from "../assets/media/250201 Robotics Tournament-0823-IMG_1301 (Vaast).jpg";
-import polarisLogo from "../assets/media/polaris_smart_transparent.png"
-import fidelityLogo from "../assets/media/FidelityGroupDark_logo-black-rgb.png"
+import polarisLogo from "../assets/media/polaris_smart (1).png";
+import fidelityLogo from "../assets/media/FidelityGroupDark_logo-white-rgb.png";
+import robotPic from "../assets/robotfull.png";
+import HeroSection from "../components/HeroSection.astro";
+import Divider from "../components/Divider.astro";
+import awardPic from "../assets/media/intothedeep_26awards.jpg";
 ---
 
+<!-- HERO SECTION -->
+<HeroSection
+    title={`Welcome to<br>Nighthawks Robotics`}
+    subtitle="Yesterday's failures are today's inspirations. Nighthawks Robotics aspires to innovate, inspire, and lead in the world of high school robotics."
+    imageUrl={robotPic.src}
+    buttonText="about us"
+    buttonTargetId="about-section"
+/>
+
+<Divider />
+
 <Page title="Home">
-	<div class="segment">
-		<img class="full" id="teamPhoto" src={teamPhoto.src} alt="2024-2025 Full Team Photo">
-		<p>
-			<b>Nighthawks North Star</b> is a high school robotics team from <b>North Trail High School</b> in <b>Calgary, Alberta</b> with three teams competing in the <i>FIRST Tech Challenge</i>.
-		</p>
+  <div class="segment reverse" id="about-section">
+    <img src={teamPhoto.src} alt="2024-2025 Full Team Photo">
+    <div class="segment-content">
+      <h2>About Nighthawks Robotics</h2>
+      <p>
+        <b>Nighthawks Robotics</b> is a high school robotics program from <a href="https://northtrail.cbe.ab.ca/"><b>North Trail High School</b></a> in <b>Calgary, Alberta</b> with four total teams competing in the <i>FIRST Tech Challenge</i>.
+      </p>
+	  <p>
+		Founded in 2023, Nighthawks Robotics aims to inspire and educate students in the fields of <i>science, technology, engineering, arts, and mathematics (STEAM)</i> through hands-on learning and competition. Our teams are dedicated to fostering a love for robotics and innovation while promoting teamwork, leadership, and community involvement.
+	  </p>
+    </div>
+  </div>
 
-		<div class="segment colored">
-			<h3>How do we compete?</h3>
-			<p>
-				We compete as part of the annual <a href="https://www.firstinspires.org/robotics/ftc"><b>FIRST Tech Challenge</b></a>. 
-				Every season we design, engineer and program a new robot to complete tasks as part of that season's game. 
-			</p>
+  <Divider />
 
-			<p>View an explainer of this season's game here to get a sense of the objectives!</p>
-			<iframe width="800" height="450" src="https://www.youtube.com/embed/LCqWA6gSCXA"> </iframe>
+  <div class="segment">
+    <iframe width="600" height="350" src="https://www.youtube.com/embed/LCqWA6gSCXA"> </iframe>
+    <div class="segment-content">
+      <h2>How do we compete?</h2>
+      <p>
+        We compete as part of the annual <a href="https://www.firstinspires.org/robotics/ftc"><b>FIRST Tech Challenge</b></a>. 
+        Every season we design, engineer and program a new robot to complete tasks as part of that season's game. We then compete in local, regional, and national tournaments against other teams.
+      </p>
+      <p>
+        We follow the FIRST philosophy of <a href="https://ftc-docs.firstinspires.org/en/latest/gracious_professionalism/gp.html"><i>Gracious Professionalism</i></a>, encouraging discovery, teamwork, inclusion, and fun. 
+		Through our participation in FIRST, we aim to develop not only technical skills but also important life skills such as problem-solving, communication, and leadership.
+      </p>
+    </div>
+  </div>
 
-			
-			<p>
-				We approach competition with the FIRST philosophy of <a href="https://ftc-docs.firstinspires.org/en/latest/gracious_professionalism/gp.html"><i>Gracious Professionalism</i></a> and encourage discovery, teamwork, inclusion and fun throughout our team, school and region!
-			</p>
-		</div>
+  <Divider />
 
-		<div class="segment colored">
-			<h3>What have we done?</h3>
-			<p>Find below a list of achievements and awards given to our teams during competitions.</p>
-			
-			<b>24124</b>
-			<ul style="margin: 5px 0;">
-				<li>
-					<b>2024-2025 (Into the Deep)</b>
-					<ul>
-						<li>Winning Alliance - 1st Team Selected @ Nii’miis’stii League Tournament</li>
-						<li>Inspires Award - 2nd Place @ Nii’miis’stii League Tournament</li>
-						<li>Playoff Team @ Alberta Championships</li>
-					</ul>
-				</li>
-			</ul>
+  <div class="segment reverse">
+    <img src={awardPic.src} alt="Into the Deep Awards">
+    <div class="segment-content">
+      <h2>Become a Sponsor</h2>
 
-			<b>26145</b>
-			<ul style="margin: 5px 0;">
-				<li>
-					<b>2024-2025 (Into the Deep)</b>
-					<ul>
-						<li>Finalist Alliance - 1st Team Selected @ Nii’miis’stii League Tournament</li>
-						<li>Inspires Award - 3rd Place @ Nii’miis’stii League Tournament</li>
-						<li>Playoff Team @ Alberta Championships</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+      <p>
+        Nighthawks Robotics is always looking for sponsors to help support our teams. 
+        Sponsorships help us cover costs for robot parts, competition fees, travel expenses, and more.
+      </p>
+      <p>
+        By sponsoring Nighthawks Robotics, you are investing in the future of STEM education and helping to inspire the next generation of innovators and leaders. 
+        Your support will directly impact our ability to provide hands-on learning experiences and opportunities for our students.
+      </p>
+      <p>
+        If you are interested in becoming a sponsor, please <a href="/contact"><b>contact us</b></a> for more information on sponsorship packages and benefits. 
+        We appreciate any support you can provide to help us continue our mission of inspiring the next generation of innovators and leaders in STEM.
+    </div>
+  </div>
 
-		<div class="segment colored">
-			<h3>Thank you to our sponsors!</h3>
-			<p>Big thank you to all the sponsors that have helped make our team possible!</p>
-			<section id="sponsorLogos">
-				<a href="https://www.polarisblinds.ca/"><img src={polarisLogo.src}></a>
-				<div class="sponsorText">
-					<h1>Polaris Blinds</h1>
-					<h3>Nighthawks</h3>
-				</div>
-				<a href="https://www.fidelitymanufacturinggroup.com/"><img src={fidelityLogo.src}></a>
-				<div class="sponsorText">
-					<h1>Fidelity Manufacturing Group</h1>
-					<h3>Fledgling</h3>
-				</div>
-				
-			</section>
-		</div>
-	</div>
-	
-	
+  <div class="segment">
+    <div class="segment-content">
+      <section id="sponsorLogos">
+        <div class="sponsor-thanks">
+          <p>Thank you to our<br><b>2025-2026 Sponsors!</b></p>
+        </div>
+        <a href="https://www.polarisblinds.ca/"><img src={polarisLogo.src} alt="Polaris Blinds"></a>
+        <a href="https://www.fidelitymanufacturinggroup.com/"><img src={fidelityLogo.src} alt="Fidelity Manufacturing Group"></a>
+      </section>
+    </div>
+  </div>
+  <Divider />
 </Page>

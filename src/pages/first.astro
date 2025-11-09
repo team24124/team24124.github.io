@@ -1,9 +1,19 @@
 ---
 import Page from "../layouts/Page.astro";
-
+import firstLogo from "../assets/media/FIRST.svg";
 ---
-<Page> 
+
+<Page>
     <div class="segment">
-        <h1>FIRST</h1>
+        <img class="full" src={firstLogo.src} alt="FIRST Logo">
+        <div class="segment-content">
+            <h2><span class="keyword">FIRST</span> Alberta</h2>
+            <p>
+                FIRST Alberta is the provincial partner of <b>FIRST</b> in Alberta, Canada. They work to support and grow the FIRST community in Alberta through organizing events, providing resources, and fostering connections among teams, volunteers, and sponsors.
+            </p>
+            <p>
+                As a proud member of the FIRST Alberta community, the Nighthawks Robotics teams actively participate in their events and initiatives. We collaborate with other teams, attend workshops, and contribute to the overall growth of robotics in the region. Our involvement with FIRST Alberta helps us stay connected to the broader robotics community and provides valuable opportunities for our team members to learn and grow!
+            </p>
+        </div>
     </div>
 </Page>
