@@ -1,5 +1,5 @@
 :root {
-  --nths_primary: rgba(0, 24, 79, 1);
+  --nths_primary: rgb(15, 54, 146);
   --nths_secondary: #a2da5e;
   --white-primary: #f5f5f5;
   --white-secondary: #e0e0e0;
@@ -211,6 +211,25 @@ main {
 .dropdown-content a:hover {
   color: var(--gray-highlight);
 }
+
+#main-header nav a.donate-btn {
+  background-color: var(--nths_primary);
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+#main-header nav a.donate-btn:hover {
+  transform: scale(1.05);
+}
+
+#main-header nav a.donate-btn:active {
+  transform: scale(1.02);
+}
+
+
 
 /* Footer */
 .footer-items {
