@@ -45,7 +45,7 @@ main {
 
 .segment img{
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
   height: auto;
   object-fit: cover;
 }
@@ -273,9 +273,10 @@ main {
 img#teamPhoto,
 img#miscPhoto,
 img.full {
-  width: 100%;
+  max-width: 900px;
   object-fit: cover;
   margin: 20px 0;
+  padding-top: 5px;
 }
 
 /* Contact */
