@@ -84,6 +84,9 @@ main {
   color: var(--nths_secondary);
 }
 
+.section_header {
+  text-align: center;
+}
 
 /* Sponsor Section */
 #sponsorSection {
